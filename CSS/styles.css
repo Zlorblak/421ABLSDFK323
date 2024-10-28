@@ -1,0 +1,268 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url(../Fonts/Montserrat-Thin.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(../Fonts/Montserrat-ExtraLight.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(../Fonts/Montserrat-Light.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../Fonts/Montserrat-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(../Fonts/Montserrat-Medium.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(../Fonts/Montserrat-SemiBold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(../Fonts/Montserrat-Bold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(../Fonts/Montserrat-ExtraBold.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(../Fonts/Montserrat-Black.woff) format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header,nav {
+    position: fixed;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    background-color: #2472CD;
+    color:white;
+    padding: 5px 0;
+    font-size: 14px;
+    z-index: 3;
+}
+
+header h1{
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+nav, .Tres, .Search-Option, .Search-Option .Options {
+    display: flex;
+}
+
+nav {
+    margin-top: 60px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ul {
+    list-style: none;
+}
+
+.Menu-Options li {
+    display: inline-block;
+    margin: 25px 0;
+    padding: 10px;
+    color: #2472CD; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+.Menu-Options li:hover {
+    background-color: #f0f0f0;
+}
+
+#Menu {
+    display: none;
+}
+
+.Tres {
+    gap:20px;
+}
+
+.Numero {
+    position: relative;
+    right: 20px;
+    top: -10px;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.Menu-Options .Menu-Logo {
+    display: none;
+}
+
+.Menu-Options .Two:hover, .Menu-Options li:first-child:hover {
+    background-color: transparent;
+}
+
+.Categoria li:first-child:hover {
+    background-color: #f0f0f0;
+}
+
+.Menu-Options .Two {
+    cursor: default;
+}
+
+.Search-Option {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgb(204, 204, 204);
+    gap: 40px;
+    height: 70px;
+    z-index: 2;
+    transition: top 1s ease;
+}
+
+.Search-Option input {
+    padding: 5px 0px 5px 45px;
+    border: 2px solid #979797;
+    border-bottom: 2px solid #e3e3e3;
+}
+
+.Search-Option input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+#Buscar {
+    background-color: #004dff;
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    height: 33px;
+    border-radius: 0 0 10px 0;
+    margin-right: 10px;
+    padding: 0 4px;
+}
+
+.Categoria {
+    display: none;
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    background-color: white; 
+    color: black; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.Menu-Options li:hover .Categoria, .Menu-Options li:focus .Categoria {
+    display: block;
+}
+
+.Menu-Options .Categoria li {
+    margin: 10px;
+}
+
+.Categoria a {
+    color:black;
+}
+
+@media(max-width:600px){
+    .Menu-Options{
+        position: absolute;
+        width: 300px;
+        top: -100%;
+        background-color: #ccc;
+        right: -100%;
+        z-index: 2;
+        transition: right 1s ease;
+    }
+
+    .Menu-Options li {
+        display: block;
+    }
+
+    .Menu-Options .Two {
+        padding: 0;
+    }
+
+    .Search-Option,.Categoria {
+        position: relative;
+    }
+
+    #Menu, .Menu-Options .Menu-Logo {
+        display: flex;
+    }
+
+    #Lupa {
+        display: none;
+    }
+
+    #Close {
+        position: absolute;
+        top: -72px;
+        right: 20px;
+    }
+}
