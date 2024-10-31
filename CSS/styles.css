@@ -104,9 +104,10 @@ nav, .Tres, .Search-Option, .Search-Option .Options {
 }
 
 nav {
-    margin-top: 60px;
+    margin-top: 52px;
     align-items: center;
     justify-content: space-evenly;
+    background-color: white;
 }
 
 ul {
@@ -130,7 +131,7 @@ a {
     background-color: #f0f0f0;
 }
 
-#Menu {
+#Menu, .Menu-Options .Menu-Logo, .Categoria {
     display: none;
 }
 
@@ -150,24 +151,17 @@ button {
     cursor: pointer;
 }
 
-.Menu-Options .Menu-Logo {
-    display: none;
-}
-
-.Menu-Options .Two:hover, .Menu-Options li:first-child:hover {
+.Menu-Options .Two:hover, .Menu-Options .Menu-Logo:hover {
     background-color: transparent;
-}
-
-.Categoria li:first-child:hover {
-    background-color: #f0f0f0;
 }
 
 .Menu-Options .Two {
     cursor: default;
 }
 
+.Search-Option, .Search-Option .Options img, .Categoria {position: absolute;}
+
 .Search-Option {
-    position: absolute;
     top: -100%;
     left: 50%;
     transform: translateX(-50%);
@@ -192,6 +186,12 @@ button {
     outline: none;
 }
 
+.Search-Option .Options img {
+    border-right: 1px solid black;
+    padding: 2px 6px;
+    border-radius: 0 10px 10px 0;
+}
+
 #Buscar {
     background-color: #004dff;
     color: white;
@@ -199,20 +199,13 @@ button {
     font-size: 16px;
     height: 33px;
     border-radius: 0 0 10px 0;
-    margin-right: 10px;
     padding: 0 4px;
 }
 
 .Categoria {
-    display: none;
-    position: absolute; 
     top: 100%; 
     left: 0; 
     background-color: white; 
-    color: black; 
-    list-style: none; 
-    padding: 0; 
-    margin: 0; 
     border-radius: 5px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -227,6 +220,15 @@ button {
 
 .Categoria a {
     color:black;
+}
+
+main {
+    padding-top: 225px;
+}
+
+#banner {
+    height: 100vh;
+    width: 100%;
 }
 
 @media(max-width:600px){
