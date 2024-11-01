@@ -30,68 +30,114 @@
     <body>
         <header>
             <h1>Todo lo que necesitas, en un solo lugar</h1>
-            <strong>Productos variados con envíos gratuitos en la Región Metropolitana y opciones para todo Chile</strong>
+            <p>Productos variados con envíos gratuitos en la Región Metropolitana y opciones para todo Chile</p>
         </header>
 
         <nav>
             <a href="/">
                 <picture>
-                    <source srcset="Icons/Logo.webp">
-                    <img src="Icons/Logo.png" width="160" height="160" alt="DropShop Chile">
+                    <source srcset="Icons/Logo.webp" type="image/webp">
+                    <img src="Icons/Logo.png" alt="DropShop Chile" width="160" height="160">
                 </picture>
             </a>
 
             <ul class="Menu-Options">
                 <li class="Menu-Logo">
-                    <img src="Icons/menu.svg" width="35" height="30" alt="Logo Menú">
-                    <h2 style="color: black;">Menú</h2>
+                    <img src="Icons/menu.svg" width="30" height="30" alt="Logo menú">
+                    <h2>Menú</h2>
+
+                    <button id="Close">
+                        <img src="Icons/close.svg" width="30" height="30" alt="Cerrar menú">
+                    </button>
                 </li>
 
                 <li class="Two">
                     <div class="Search-Option">
-                        <div class="Options">
+                        <div>
                             <img src="Icons/lupa.svg" width="26" height="26" alt="Icono de lupa">
-                            <input type="text" placeholder="Buscar producto..." id="BuscadorTexto">
+                            <input type="text" placeholder="Buscar producto...." id="InputTEXT">
                             <button id="Buscar">Buscar</button>
                         </div>
-            
-                        <button id="Close">
-                            <img src="Icons/close.svg" width="45" height="45" alt="Cerrar buscador">
+
+                        <button id="Close-1">
+                            <img src="Icons/close.svg" width="35" height="35" alt="Cerrar buscador">
                         </button>
-                    </div>
+                    </div>                    
                 </li>
 
                 <li><a href="/">Inicio</a></li>
-                <li style="position:relative;">Catálogo
-                    <ul class="Categoria">
+                <li class="SubMenu">Categoría
+                    <ul>
                         <li><a href="Categoria/hogar.html">Hogar</a></li>
                         <li><a href="Categoria/belleza.html">Belleza</a></li>
                         <li><a href="Categoria/tecnologia.html">Tecnología</a></li>
                     </ul>
                 </li>
-
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="/">Contacto</a></li>
             </ul>
 
-            <div class="Tres">
+            <div class="tres">
                 <button id="Lupa">
                     <img src="Icons/lupa.svg" width="26" height="26" alt="Abrir buscador">
                 </button>
 
-                <a href="carrito-de-compras.html">
-                    <img src="Icons/cart.svg" width="30" height="26" alt="Entrar en el carrito de compras">
+                <a href="Carrito-de-compras.html">
+                    <img src="Icons/cart.svg" width="26" height="26" alt="Abrir carrito de compras">
                 </a>
 
-                <p class="Numero">0</p>
+                <p id="Numero">0</p>
 
                 <button id="Menu">
-                    <img src="Icons/menu.svg" width="30" height="26" alt="Abrir menú">
-                </button>                
+                    <img src="Icons/menu.svg" width="26" height="26" alt="Abrir menú">
+                </button>
             </div>
         </nav>
 
         <main>
-            <img src="Imagenes/banner/ESPECIALES OFERTAS.png" id="banner">
+            <div class="Banner">
+                <img src="Imagenes/banner/a-barista-smiles-proudly-stood-in-her-cafe.webp" alt="banner">
+                <h2>Bienvenido a DropShop Chile</h2>
+                <a href="#Categorias">Descubre nuestras categorías</a>
+            </div>
+
+            <h2 id="h2">Nuestro compromiso</h2>
+
+            <section class="commitment">
+                <p>En <strong>DropShop Chile</strong>, nos enorgullece ofrecer envíos rápidos y confiables a todas las regiones de Chile. Ya sea que te encuentres en la capital de Santiago o en las tierras del sur, ¡entregamos directamente a tu puerta!</p>
+            </section>
+
+            <hr>
+
+            <section class="commitment">
+                <h2><a id="Categorias">Nuestras categorías:</a></h2>
+
+                <div class="Categorias">
+                    <div class="Box">
+                        <img src="Imagenes/banner/timothy-buck-psrloDbaZc8-unsplash_540x.webp" width="250" height="250" alt="Imagen Hogar">
+                        <h3>Hogar</h3>
+                    </div>
+
+                    <div class="Box">
+                        <img src="Imagenes/banner/timothy-buck-psrloDbaZc8-unsplash_540x.webp" width="250" height="250" alt="Imagen Belleza">
+                        <h3>Belleza</h3>
+                    </div>
+
+                    <div class="Box">
+                        <img src="Imagenes/banner/timothy-buck-psrloDbaZc8-unsplash_540x.webp" width="250" height="250" alt="Imagen Tecnologica">
+                        <h3>Tecnología</h3>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="commitment-1">
+                <img src="Imagenes/banner/LOGO-WEB-3351698557.png" width="300" height="300" style="border:1px solid #ccc" alt="Blue Express">
+                <div>
+                    <h2>Tus envíos seguros</h2>
+                    <p>Todos nuestros envíos son realizados por <strong>Blue Express.</strong> Empresa lider en despacho y logística con cobertura todo Chile</p>
+                </div>
+            </section>
         </main>
 
         <script src="JS/function.js" defer=""></script>

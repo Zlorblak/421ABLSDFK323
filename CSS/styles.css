@@ -79,7 +79,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-header,nav {
+header, nav {
     position: fixed;
     width: 100%;
 }
@@ -88,111 +88,124 @@ header {
     text-align: center;
     background-color: #2472CD;
     color:white;
-    padding: 5px 0;
-    font-size: 14px;
-    z-index: 3;
+    padding: 10px 0;
+    height: 78px;
+    z-index: 2;
 }
 
-header h1{
-    font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 5px;
+header h1 {
+    font-size: clamp(15px,4vw,23px);
+    margin: 7px 0;
 }
 
-nav, .Tres, .Search-Option, .Search-Option .Options {
-    display: flex;
+header p{
+    font-size: clamp(12px,4vw,15px);
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: 0;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
 }
 
 nav {
-    margin-top: 52px;
-    align-items: center;
+    display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    margin-top: 70px;
     background-color: white;
+    z-index: 1;
 }
 
 ul {
     list-style: none;
 }
 
-.Menu-Options li {
+nav ul li {
     display: inline-block;
-    margin: 25px 0;
+    margin: 10px;
     padding: 10px;
-    color: #2472CD; 
-    cursor: pointer;
+    color: #2472CD;
     transition: background-color 0.3s;
 }
 
-a {
-    text-decoration: none;
+.SubMenu {
+    position: relative;
+    cursor: pointer;
+}
+
+.SubMenu ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.Menu-Options .SubMenu:hover ul, .Menu-Options .SubMenu:hover ul {
+    display: block;
 }
 
 .Menu-Options li:hover {
     background-color: #f0f0f0;
 }
 
-#Menu, .Menu-Options .Menu-Logo, .Categoria {
+.tres {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    gap: 20px;
+}
+
+#Numero {
+    position: relative;
+    top: -16px;
+    right: 20px;
+}
+
+#Menu, .Menu-Logo {
     display: none;
 }
 
-.Tres {
-    gap:20px;
-}
-
-.Numero {
-    position: relative;
-    right: 20px;
-    top: -10px;
-}
-
-button {
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-}
-
-.Menu-Options .Two:hover, .Menu-Options .Menu-Logo:hover {
-    background-color: transparent;
-}
-
-.Menu-Options .Two {
-    cursor: default;
-}
-
-.Search-Option, .Search-Option .Options img, .Categoria {position: absolute;}
-
-.Search-Option {
-    top: -100%;
-    left: 50%;
-    transform: translateX(-50%);
+.Two .Search-Option {
+    position: absolute;
     width: 100%;
+    left: 0;
+    background-color: #ccc;
+    padding: 20px 0;
+    z-index: 1;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    background: rgb(204, 204, 204);
-    gap: 40px;
-    height: 70px;
-    z-index: 2;
+    gap: 60px;
+    top: -100%;
     transition: top 1s ease;
 }
 
-.Search-Option input {
-    padding: 5px 0px 5px 45px;
+.Two .Search-Option div input {
+    padding: 5px 0px 5px 35px;
     border: 2px solid #979797;
     border-bottom: 2px solid #e3e3e3;
 }
 
-.Search-Option input:focus {
-    border-color: #007BFF;
-    outline: none;
-}
-
-.Search-Option .Options img {
+.Two .Search-Option div img {
+    position: absolute;
     border-right: 1px solid black;
-    padding: 2px 6px;
+    padding: 2px;
     border-radius: 0 10px 10px 0;
+    top: 22px;
 }
 
-#Buscar {
+.Two .Search-Option div #Buscar {
     background-color: #004dff;
     color: white;
     font-weight: 800;
@@ -200,71 +213,168 @@ button {
     height: 33px;
     border-radius: 0 0 10px 0;
     padding: 0 4px;
+    position: relative;
+    right: 5px;
+    top: 1px;
 }
 
-.Categoria {
-    top: 100%; 
-    left: 0; 
-    background-color: white; 
-    border-radius: 5px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.Search-Option div input:focus {
+    border-width:2px;
+    border-color: #007BFF;
+    outline: none;
 }
 
-.Menu-Options li:hover .Categoria, .Menu-Options li:focus .Categoria {
-    display: block;
-}
-
-.Menu-Options .Categoria li {
-    margin: 10px;
-}
-
-.Categoria a {
-    color:black;
+.Menu-Options .Two:hover {
+    background: transparent;
 }
 
 main {
-    padding-top: 225px;
+    padding-top: 235px;
 }
 
-#banner {
+.Banner {
+    color:White;
+}
+
+.Banner img {
     height: 100vh;
     width: 100%;
 }
 
-@media(max-width:600px){
-    .Menu-Options{
+.Banner h2 {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-size: 30px;
+    transform: translateY(-80%);
+}
+
+.Banner a {
+    position: absolute;
+    top: 95%;
+    left: 10%;
+    transform: translateY(-100%);
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    width: 292px;
+    color:white;
+}
+
+#h2 {
+    text-align: center;
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+.commitment {
+    line-height: 1.6;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.commitment p, .commitment-1 p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.Categorias {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.Categorias .Box {
+    cursor: pointer;
+}
+
+.Categorias .Box img {
+    border-radius: 10px;
+}
+
+.Categorias .Box h3 {
+    color:white;
+    position: relative;
+    top: -120px;
+    text-align: center;
+}
+
+.Categorias .Box img:hover,.Categorias .Box h3:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+hr {
+    width: 94%;
+    margin: 20px auto;
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.commitment-1 {
+    display: flex;
+    align-items: center; 
+    gap: 80px; 
+    margin: 40px auto;
+    width: 50%;
+}
+
+.commitment-1 img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 10px;
+}
+
+.commitment-1 p {
+    width: 90%;
+}
+
+@media (max-width:1200px) {
+    .commitment-1 {
+        flex-direction: column;
+    }
+
+    .commitment-1 h2, .commitment-1 p {
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width:659px) {
+    .Menu-Options {
         position: absolute;
-        width: 300px;
-        top: -100%;
-        background-color: #ccc;
         right: -100%;
-        z-index: 2;
+        top: 21px;
+        width: 300px;
+        background-color: #ccc;
+        z-index: 1;
+        top: 28px;
         transition: right 1s ease;
     }
 
-    .Menu-Options li {
+    .Menu-Options li,#Menu {
         display: block;
     }
 
-    .Menu-Options .Two {
-        padding: 0;
-    }
-
-    .Search-Option,.Categoria {
+    .SubMenu ul,.Two .Search-Option {
         position: relative;
     }
 
-    #Menu, .Menu-Options .Menu-Logo {
+    .Menu-Options .Menu-Logo, .Search-Option div{
         display: flex;
+        color:black;
     }
 
-    #Lupa {
+    .Menu-Logo h2 {
+        margin-right:120px;
+    }
+
+    #Close-1,#Lupa {
         display: none;
-    }
-
-    #Close {
-        position: absolute;
-        top: -72px;
-        right: 20px;
     }
 }
